@@ -1,0 +1,14 @@
+{
+    "name": "pishro-plus",
+    "short_name": "pishro-plus",
+    "icons": [
+        {
+            "src": "/android-chrome-144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#d8d8d8",
+    "background_color": "#d8d8d8",
+    "display": "standalone"
+}

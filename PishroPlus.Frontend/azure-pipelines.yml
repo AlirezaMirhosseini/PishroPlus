@@ -1,0 +1,32 @@
+trigger:
+  - development
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+# Install Node.js
+- task: NodeTool@0
+  inputs:
+    versionSpec: '20.x'
+  displayName: 'Install Node.js'
+
+# Install dependencies and build Vue.js app
+- script: |
+    npm install
+    npm run build
+  displayName: 'npm install and build'
+
+# Upload to FTP server
+- task: FtpUpload@2
+  inputs:
+    credentialsOption: 'inputs'
+    serverUrl: 'ftp://185.252.29.60:21' # ⚠️ Replace with your FTP server
+    username: '$(ftpUsername)'        # ⚠️ Set as pipeline secret variable
+    password: '$(ftpPassword)'        # ⚠️ Set as pipeline secret variable
+    rootDirectory: 'dist'             # Folder that contains build output
+    filePatterns: '**/*'
+    remoteDirectory: '/'  # ⚠️ Replace with your target path on server
+    clean: false
+    overwrite: true
+  displayName: 'Deploy to FTP server'
