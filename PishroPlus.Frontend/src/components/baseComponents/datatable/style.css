@@ -1,0 +1,258 @@
+.datatable table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.datatable {
+  padding: 5px;
+  margin: -5px;
+  transition: 0.3s ease;
+}
+
+.datatable:focus {
+  outline: 1px dashed gray;
+  border-radius: 10px;
+}
+
+.datatable table thead {
+  background-color: rgb(var(--v-theme-container));
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.datatable table tr th,
+.datatable table tr td {
+  border-inline-start: 1px solid lightgray;
+}
+
+.datatable table tr td {
+  border-bottom: 1px solid lightgray;
+}
+
+.datatable table tr th:last-child,
+.datatable table tr td:last-child {
+  border-inline-end: 1px solid lightgray;
+}
+.datatable table tr th {
+  border-top: 1px solid lightgray;
+}
+
+/* top-left border-radius */
+.datatable table tr:first-child th:first-child {
+  border-start-start-radius: 5px;
+}
+
+/* top-right border-radius */
+.datatable table tr:first-child th:last-child {
+  border-start-end-radius: 5px;
+}
+
+/* bottom-left border-radius */
+.datatable table tr:last-child td:first-child {
+  border-end-start-radius: 5px;
+}
+
+/* bottom-right border-radius */
+.datatable table tr:last-child td:last-child {
+  border-end-end-radius: 5px;
+}
+
+.datatable {
+  padding-block: 5px;
+  padding-inline-end: 1px;
+  overflow-x: auto;
+  position: relative;
+  width: 100%;
+}
+.datatable table {
+  width: 100%;
+  border-radius: 5px;
+  border-spacing: 0px !important;
+}
+
+.datatable .row {
+  width: 100%;
+  margin-block: 1px;
+}
+.datatable .clickable-row {
+  cursor: pointer;
+}
+.datatable .selected-row {
+  background-color: rgb(var(--v-theme-lgrey));
+}
+
+.datatable th {
+  padding: 10px;
+  font-weight: 500;
+  color: rgb(var(--v-theme-grey));
+}
+
+.datatable td {
+  padding: 5px;
+  /* border-top: 1px solid lightgray; */
+}
+
+.datatable .pagination {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+}
+.datatable .pagination button {
+  font-style: normal;
+  font-size: 12pt !important;
+  cursor: pointer;
+  outline: 1px solid lightgray;
+  padding-inline: 9px;
+  border-radius: 3px;
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+.datatable .pagination .page {
+  font-size: 10pt;
+  margin-inline: 8px;
+}
+.datatable .pagination #rows-per-page {
+  width: 80px;
+  appearance: revert;
+  cursor: pointer;
+  outline: 1px solid lightgrey;
+  border-radius: 2px;
+  text-align: center;
+  margin-inline: 8px;
+  margin-inline-end: 30px;
+}
+
+.datatable .select-page :disabled {
+  color: lightgray !important;
+}
+
+.datatable .sortable.desc:hover::after,
+.datatable .sortable.desc::after {
+  content: '↓';
+  margin-inline-end: 6px;
+  font-size: 10pt;
+  position: absolute;
+  margin-inline-start: 5px;
+  transform: translateY(-50%);
+  top: 50%;
+  color: rgb(var(--v-theme-black));
+}
+.datatable .sortable.asc:hover::after,
+.datatable .sortable.asc::after {
+  content: '↑';
+  margin-inline-end: 6px;
+  font-size: 10pt;
+  position: absolute;
+  margin-inline-start: 5px;
+  transform: translateY(-50%);
+  top: 50%;
+  color: rgb(var(--v-theme-black));
+}
+.datatable .sortable {
+  cursor: pointer;
+  position: relative;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.datatable .sortable.desc::after,
+.datatable .sortable.asc::after,
+.datatable .sortable:hover {
+  color: rgb(var(--v-theme-black));
+}
+
+.datatable .sortable:hover::after {
+  content: '↑';
+  margin-inline-end: 6px;
+  font-size: 10pt;
+  position: absolute;
+  margin-inline-start: 5px;
+  transform: translateY(-50%);
+  top: 50%;
+  color: rgb(0, 0, 0, 0.6);
+}
+
+.datatable .select-column {
+  width: 10px;
+  min-width: 10px;
+  background-color: #eeeeee;
+  padding: 0;
+}
+
+.list-group .dt-column-list-item:last-child {
+  border-bottom: none;
+}
+
+.dt-column-list-item {
+  position: relative;
+  display: block;
+  padding: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.dt-column-handler {
+  cursor: move;
+}
+
+.table-container {
+  overflow-x: auto;
+  padding-bottom: 5px;
+  padding-inline-end: 1px;
+}
+
+.dt-fixed-item {
+  position: sticky !important;
+  left: 0;
+  box-shadow: -5px 0 0 white;
+  background-color: rgb(var(--v-theme-surface));
+}
+
+.dt-fixed-header {
+  background-color: rgb(var(--v-theme-container)) !important;
+}
+
+.datatable .selected-row .dt-fixed-item:hover .dt-fixed-item {
+  background-color: rgb(var(--v-theme-lgrey));
+}
+
+.dt-searchbox {
+  max-width: 300px;
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .dt-searchbox {
+    max-width: unset;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
+  .pagination {
+    flex-direction: column;
+  }
+
+  .datatable .pagination #rows-per-page {
+    margin-inline-end: 0px;
+  }
+
+  .select-row-per-page {
+    margin-block: 5px;
+  }
+
+  .select-page {
+    margin-block: 5px;
+  }
+}
+
+.datatable .row:focus {
+  outline: none;
+}
+
+.datatable td:focus {
+  outline: none;
+}
+
+.v-autocomplete__content {
+  z-index: 1000;
+}

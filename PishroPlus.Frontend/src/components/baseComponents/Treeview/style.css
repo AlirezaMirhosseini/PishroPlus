@@ -1,0 +1,43 @@
+.tv-container {
+  margin-inline-start: 20px;
+  font-size: 14px !important;
+}
+
+.tree-node > div.tree-node-children {
+  margin-bottom: 5px;
+  font-size: 11px !important;
+
+}
+.tree-node-inner-back {
+  padding-left: 0 !important ;
+  margin-block: 2px !important ;
+}
+.active-pointer {
+  border-left: 2px solid !important;
+  border-left-color: #ef6c00 !important;
+  border-end-start-radius: 5px;
+}
+.expander-icon::after {
+  background-color: transparent !important;
+}
+.expander-icon {
+  /* position: absolute !important;
+  margin-right: -35px; */
+}
+.active {
+  background-color: rgba(111, 111, 215, 0.214);
+  border-radius: 5px;
+}
+.treeview-box {
+  /* overflow-y: scroll; */
+}
+.c-active {
+  border: 1px solid #0076b6be !important;
+}
+#collapse-all-btn:hover {
+  opacity: 1 !important;
+}
+.text-grey{
+  font-size: 10px !important;
+
+}
